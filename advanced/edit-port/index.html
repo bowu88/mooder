@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>修改默认端口 - Mooder团队贡献系统文档</title>
+      
+      
+      
+      
+        <meta name="author" content="phith0n">
+      
+    
+    <meta property="og:url" content="None">
+    <meta property="og:title" content="Mooder团队贡献系统文档">
+    <meta property="og:image" content="None/../../">
+    <meta name="apple-mobile-web-app-title" content="Mooder团队贡献系统文档">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../main.ico">
+    <link rel="icon" type="image/x-icon" href="../../../../main.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../assets/fonts/icon.eot?52m981');
+      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/application-a422ff04cc.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono">
+      <style>
+        body, input {
+          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+      
+      
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                高级 <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        修改默认端口
+      </div>
+    </div>
+    
+    
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="https://github.com/phith0n/mooder" class="project">
+    <div class="banner">
+      
+      <div class="name">
+        <strong>
+          Mooder团队贡献系统文档
+          <span class="version">
+            
+          </span>
+        </strong>
+        
+          <br>
+          phith0n/mooder
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            
+            <a href="https://github.com/phith0n/mooder/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/phith0n/mooder/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="介绍" href="../..">
+      介绍
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <span class="section">安装</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="从Docker一键安装" href="../../install/install-from-docker/">
+      从Docker一键安装
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="从源码安装" href="../../install/install-from-source/">
+      从源码安装
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="初始化分类" href="../../install/category/">
+      初始化分类
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">自定义配置</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="配置文件说明" href="../../setting/info/">
+      配置文件说明
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">高级</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="管理员与审核员" href="../manage/">
+      管理员与审核员
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="current" title="修改默认端口" href="./">
+      修改默认端口
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Django自带Server更换端口" href="#djangoserver">
+                Django自带Server更换端口
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Docker-compose一键安装时指定端口" href="#docker-compose">
+                Docker-compose一键安装时指定端口
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Apache mod_wsgi部署时修改端口" href="#apache-mod_wsgi">
+                Apache mod_wsgi部署时修改端口
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Gunicorn + Nginx部署时修改端口" href="#gunicorn-nginx">
+                Gunicorn + Nginx部署时修改端口
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="修改管理地址" href="../edit-admin-url/">
+      修改管理地址
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="项目更新" href="../upgrade/">
+      项目更新
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="关于" href="../../about/">
+      关于
+    </a>
+    
+  </li>
+
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="_1">修改端口<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
+<p>Mooder默认运行于8000端口下，当然你可以自定义端口。</p>
+<h2 id="djangoserver">Django自带Server更换端口<a class="headerlink" href="#djangoserver" title="Permanent link">#</a></h2>
+<p>Django自带的Server通过<code>python3 manage.py runserver</code>运行，默认监听8000端口。我们可以通过如下命令为其指定端口：</p>
+<div class="code"><pre><span></span>python3 manage.py runserver localhost:8888
+</pre></div>
+
+
+<h2 id="docker-compose">Docker-compose一键安装时指定端口<a class="headerlink" href="#docker-compose" title="Permanent link">#</a></h2>
+<p>Mooder支持使用docker-compose一键安装，默认安装完成后监听8000端口。如果你需要修改这个端口为80，只需修改docker-compose.yml即可：</p>
+<div class="code"><pre><span></span>version: &#39;2&#39;
+services:
+ web:
+   build: .
+   command: --url-alias /media /data
+   ports:
+    - &quot;80:80&quot;
+   depends_on:
+    - db
+   env_file:
+    - .env
+   volumes:
+    - file-data:/data
+ db:
+   image: postgres
+   environment:
+    - POSTGRES_PASSWORD=postgres
+   volumes:
+    - db-data:/var/lib/postgresql/data
+volumes:
+  file-data:
+    driver: local
+  db-data:
+    driver: local
+</pre></div>
+
+
+<p>将ports中的<code>8000:80</code>修改为<code>80:80</code>。修改完成后，重新启动即可：</p>
+<div class="code"><pre><span></span>sudo docker-compose up -d 
+</pre></div>
+
+
+<h2 id="apache-mod_wsgi">Apache mod_wsgi部署时修改端口<a class="headerlink" href="#apache-mod_wsgi" title="Permanent link">#</a></h2>
+<p><a href="https://docs.djangoproject.com/en/dev/howto/deployment/wsgi/modwsgi/">How to use Django with Apache and mod_wsgi</a> ，通过指定Apache监听的端口即可。</p>
+<h2 id="gunicorn-nginx">Gunicorn + Nginx部署时修改端口<a class="headerlink" href="#gunicorn-nginx" title="Permanent link">#</a></h2>
+<p><a href="https://docs.djangoproject.com/en/dev/howto/deployment/wsgi/gunicorn/">How to use Django with Gunicorn</a> ，<a href="http://docs.gunicorn.org/en/latest/deploy.html">Gunicorn文档</a> 中给出了一个Nginx部署的配置文件：</p>
+<div class="code"><pre><span></span><span class="nt">worker_processes</span> <span class="nt">1</span><span class="o">;</span>
+
+<span class="nt">user</span> <span class="nt">nobody</span> <span class="nt">nogroup</span><span class="o">;</span>
+<span class="err">#</span> <span class="s1">&#39;user nobody nobody;&#39;</span> <span class="nt">for</span> <span class="nt">systems</span> <span class="nt">with</span> <span class="s1">&#39;nobody&#39;</span> <span class="nt">as</span> <span class="nt">a</span> <span class="nt">group</span> <span class="nt">instead</span>
+<span class="nt">pid</span> <span class="o">/</span><span class="nt">tmp</span><span class="o">/</span><span class="nt">nginx</span><span class="nc">.pid</span><span class="o">;</span>
+<span class="nt">error_log</span> <span class="o">/</span><span class="nt">tmp</span><span class="o">/</span><span class="nt">nginx</span><span class="nc">.error.log</span><span class="o">;</span>
+
+<span class="nt">events</span> <span class="p">{</span>
+  <span class="n">worker_connections</span> <span class="m">1024</span><span class="p">;</span> <span class="err">#</span> <span class="n">increase</span> <span class="n">if</span> <span class="n">you</span> <span class="n">have</span> <span class="n">lots</span> <span class="n">of</span> <span class="n">clients</span>
+  <span class="n">accept_mutex</span> <span class="n">off</span><span class="p">;</span> <span class="err">#</span> <span class="n">set</span> <span class="n">to</span> <span class="s1">&#39;on&#39;</span> <span class="n">if</span> <span class="n">nginx</span> <span class="n">worker_processes</span> <span class="o">&gt;</span> <span class="m">1</span>
+  <span class="err">#</span> <span class="s1">&#39;use epoll;&#39;</span> <span class="n">to</span> <span class="n">enable</span> <span class="n">for</span> <span class="n">Linux</span> <span class="m">2</span><span class="o">.</span><span class="m">6</span><span class="o">+</span>
+  <span class="err">#</span> <span class="s1">&#39;use kqueue;&#39;</span> <span class="n">to</span> <span class="n">enable</span> <span class="n">for</span> <span class="n">FreeBSD</span><span class="o">,</span> <span class="n">OSX</span>
+<span class="p">}</span>
+
+<span class="nt">http</span> <span class="p">{</span>
+  <span class="n">include</span> <span class="n">mime</span><span class="o">.</span><span class="n">types</span><span class="p">;</span>
+  <span class="err">#</span> <span class="n">fallback</span> <span class="n">in</span> <span class="n">case</span> <span class="n">we</span> <span class="n">can</span><span class="s1">&#39;t determine a type</span>
+<span class="s1">  default_type application/octet-stream;</span>
+<span class="s1">  access_log /tmp/nginx.access.log combined;</span>
+<span class="s1">  sendfile on;</span>
+
+<span class="s1">  upstream app_server {</span>
+<span class="s1">    # fail_timeout=0 means we always retry an upstream even if it failed</span>
+<span class="s1">    # to return a good HTTP response</span>
+
+<span class="s1">    # for UNIX domain socket setups</span>
+<span class="s1">    server unix:/tmp/gunicorn.sock fail_timeout=0;</span>
+
+<span class="s1">    # for a TCP configuration</span>
+<span class="s1">    # server 192.168.0.7:8000 fail_timeout=0;</span>
+<span class="s1">  }</span>
+
+<span class="s1">  server {</span>
+<span class="s1">    # if no Host match, close the connection to prevent host spoofing</span>
+<span class="s1">    listen 80 default_server;</span>
+<span class="s1">    return 444;</span>
+<span class="s1">  }</span>
+
+<span class="s1">  server {</span>
+<span class="s1">    # use &#39;</span><span class="n">listen</span> <span class="m">80</span> <span class="n">deferred</span><span class="p">;</span><span class="s1">&#39; for Linux</span>
+<span class="s1">    # use &#39;</span><span class="n">listen</span> <span class="m">80</span> <span class="n">accept_filter</span><span class="o">=</span><span class="n">httpready</span><span class="p">;</span><span class="s1">&#39; for FreeBSD</span>
+<span class="s1">    listen 80;</span>
+<span class="s1">    client_max_body_size 4G;</span>
+
+<span class="s1">    # set the correct host(s) for your site</span>
+<span class="s1">    server_name example.com www.example.com;</span>
+
+<span class="s1">    keepalive_timeout 5;</span>
+
+<span class="s1">    # path for static files</span>
+<span class="s1">    root /path/to/app/current/public;</span>
+
+<span class="s1">    location / {</span>
+<span class="s1">      # checks for static file, if not found proxy to app</span>
+<span class="s1">      try_files $uri @proxy_to_app;</span>
+<span class="s1">    }</span>
+
+<span class="s1">    location @proxy_to_app {</span>
+<span class="s1">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span>
+<span class="s1">      # enable this if and only if you use HTTPS</span>
+<span class="s1">      # proxy_set_header X-Forwarded-Proto https;</span>
+<span class="s1">      proxy_set_header Host $http_host;</span>
+<span class="s1">      # we don&#39;</span><span class="n">t</span> <span class="n">want</span> <span class="n">nginx</span> <span class="n">trying</span> <span class="n">to</span> <span class="n">do</span> <span class="n">something</span> <span class="n">clever</span> <span class="n">with</span>
+      <span class="err">#</span> <span class="n">redirects</span><span class="o">,</span> <span class="n">we</span> <span class="n">set</span> <span class="n">the</span> <span class="n">Host</span><span class="o">:</span> <span class="n">header</span> <span class="nb">above</span> <span class="n">already</span><span class="o">.</span>
+      <span class="n">proxy_redirect</span> <span class="n">off</span><span class="p">;</span>
+      <span class="n">proxy_pass</span> <span class="n">http</span><span class="o">://</span><span class="n">app_server</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nt">error_page</span> <span class="nt">500</span> <span class="nt">502</span> <span class="nt">503</span> <span class="nt">504</span> <span class="o">/</span><span class="nt">500</span><span class="nc">.html</span><span class="o">;</span>
+    <span class="nt">location</span> <span class="o">=</span> <span class="o">/</span><span class="nt">500</span><span class="nc">.html</span> <span class="p">{</span>
+      <span class="n">root</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">current</span><span class="o">/</span><span class="n">public</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="err">}</span>
+<span class="err">}</span>
+</pre></div>
+
+
+<p>类似Apache，只需修改<code>listen 80</code>为你自定义的端口即可。</p>
+          <aside class="copyright" role="note">
+            
+              Mooder团队贡献系统 &ndash;
+            
+            Documentation built with
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>
+            using the
+            <a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
+              Material
+            </a>
+            theme.
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../manage/" title="管理员与审核员">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                管理员与审核员
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../edit-admin-url/" title="修改管理地址">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                修改管理地址
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../..';
+      var repo_id  = 'phith0n/mooder';
+    </script>
+    <script src="../../assets/javascripts/application-997097ee0c.js"></script>
+    
+    
+  </body>
+</html>

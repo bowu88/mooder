@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>配置文件说明 - Mooder团队贡献系统文档</title>
+      
+      
+      
+      
+        <meta name="author" content="phith0n">
+      
+    
+    <meta property="og:url" content="None">
+    <meta property="og:title" content="Mooder团队贡献系统文档">
+    <meta property="og:image" content="None/../../">
+    <meta name="apple-mobile-web-app-title" content="Mooder团队贡献系统文档">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../main.ico">
+    <link rel="icon" type="image/x-icon" href="../../../../main.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../assets/fonts/icon.eot?52m981');
+      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/application-a422ff04cc.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono">
+      <style>
+        body, input {
+          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+      
+      
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                自定义配置 <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        配置文件说明
+      </div>
+    </div>
+    
+    
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="https://github.com/phith0n/mooder" class="project">
+    <div class="banner">
+      
+      <div class="name">
+        <strong>
+          Mooder团队贡献系统文档
+          <span class="version">
+            
+          </span>
+        </strong>
+        
+          <br>
+          phith0n/mooder
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            
+            <a href="https://github.com/phith0n/mooder/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/phith0n/mooder/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="介绍" href="../..">
+      介绍
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <span class="section">安装</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="从Docker一键安装" href="../../install/install-from-docker/">
+      从Docker一键安装
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="从源码安装" href="../../install/install-from-source/">
+      从源码安装
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="初始化分类" href="../../install/category/">
+      初始化分类
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">自定义配置</span>
+    <ul>
+      
+        
+  <li>
+    <a class="current" title="配置文件说明" href="./">
+      配置文件说明
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="1. 如何自定义配置" href="#1">
+                1. 如何自定义配置
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="2. 配置项说明" href="#2">
+                2. 配置项说明
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">高级</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="管理员与审核员" href="../../advanced/manage/">
+      管理员与审核员
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="修改默认端口" href="../../advanced/edit-port/">
+      修改默认端口
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="修改管理地址" href="../../advanced/edit-admin-url/">
+      修改管理地址
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="项目更新" href="../../advanced/upgrade/">
+      项目更新
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="关于" href="../../about/">
+      关于
+    </a>
+    
+  </li>
+
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="_1">配置文件说明<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
+<p>配置文件mooder/settings.py中包含的配置项的说明。</p>
+<p>说明一下，如果你是使用docker-compose一键安装的Mooder，可以无需修改任何选项，默认会生成一个安全的生产环境。如果你还是需要手工修改配置，请执行 <code>docker-compose exec web /bin/bash</code> 进入容器内进行修改。</p>
+<h2 id="1">1. 如何自定义配置<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
+<p>Mooder包含一个基础配置文件（mooder/settings.py）和一个生产环境配置文件(mooder/settings_production.py)。二者是继承关系，settings_production.py继承所有settings.py定义的配置，并通过定义相同名字的变量来修改配置。</p>
+<p>如，默认settings.py中定义<code>DEBUG=True</code>，即开启调试模式；而settings_production.py中定义<code>DEBUG=False</code>，就覆盖了settings.py的设置，关闭了Django的调试模式。</p>
+<p>所以，建议你不要修改mooder/settings.py，直接修改并使用mooder/settings_production.py。</p>
+<p>如果你需要自定义配置（不是用默认的生产环境配置文件），你可以新建一个mooder/settings_custom.py，并导入所有settings.py的配置项：</p>
+<div class="code"><pre><span></span><span class="kn">from</span> <span class="nn">mooder.settings</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># 再在后面修改你自定义的配置，如DEBUG=True</span>
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="bp">True</span>
+</pre></div>
+
+
+<p>Mooder启动的时候，会默认加载mooder/settings.py作为配置文件。为了使用自定义配置文件，我们需要设置一个环境变量，指定自定义配置文件的位置：</p>
+<div class="code"><pre><span></span><span class="c1"># DJANGO_SETTINGS_MODULE 环境变量的值是Python包格式</span>
+<span class="nb">export</span> <span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span>mooder.settings_custom
+
+<span class="c1"># 运行Mooder</span>
+python3 manage.py runserver
+</pre></div>
+
+
+<p>Windows下使用<code>set</code>来指定环境变量：</p>
+<div class="code"><pre><span></span><span class="nb">set</span> <span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span>mooder.settings_custom
+py -3 manage.py runserver
+</pre></div>
+
+
+<p>如果你使用系统自带的生产环境配置文件（mooder/settings_production.py），也需要定义该环境变量。</p>
+<p>在指定了环境变量DJANGO_SETTINGS_MODULE后，Mooder就会使用DJANGO_SETTINGS_MODULE指向的配置文件。</p>
+<h2 id="2">2. 配置项说明<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
+<p>大部分配置项在Django的 <a href="https://docs.djangoproject.com/en/dev/ref/settings/">官方文档</a> 中都有说明，我这里不会说的很详细，只会说一些比较关键的项目。</p>
+<h4 id="debug">DEBUG<a class="headerlink" href="#debug" title="Permanent link">#</a></h4>
+<p>是否是调试模式。注意，生产环境下一定要设置为False，否则可能造成安全问题！</p>
+<h4 id="secret_key">SECRET_KEY<a class="headerlink" href="#secret_key" title="Permanent link">#</a></h4>
+<p>加密与签名的密钥，一个随机字符串。</p>
+<p>查看settings.py文件中的定义：</p>
+<div class="code"><pre><span></span><span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;.secretkey&#39;</span><span class="p">)):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;.secretkey&#39;</span><span class="p">),</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">SECRET_KEY</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+
+
+<p>可见，如果.secretkey文件存在，则SECRET_KEY从.secretkey中读取。否则默认是没有配置SECRET_KEY的，你必须手工定义它。也就是说，如果当前目录下存在.secretkey文件，则无需手工定义SECRET_KEY。</p>
+<p>你可以用openssl简单地生成一个随机字符串保存在.secretkey文件中，无需再用脸滚键盘：</p>
+<div class="code"><pre><span></span>sudo apt-get install openssl
+openssl rand -out .secretkey 64
+</pre></div>
+
+
+<h4 id="allowed_hosts">ALLOWED_HOSTS<a class="headerlink" href="#allowed_hosts" title="Permanent link">#</a></h4>
+<p>允许访问的host头，可为多个，如： <code>['example.com', 'www.example.com']</code>。不限制则设置为<code>['*']</code>。</p>
+<p>调试模式关闭时，必须设置这个选项。</p>
+<h4 id="databases">DATABASES<a class="headerlink" href="#databases" title="Permanent link">#</a></h4>
+<p>数据库配置选项，详见 <a href="https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-DATABASES">Django文档</a> 和前一章说明。</p>
+<h4 id="email_host_user-email_backend-mailgun_access_key-mailgun_server_name">EMAIL_HOST_USER / EMAIL_BACKEND / MAILGUN_ACCESS_KEY / MAILGUN_SERVER_NAME<a class="headerlink" href="#email_host_user-email_backend-mailgun_access_key-mailgun_server_name" title="Permanent link">#</a></h4>
+<p>邮件客户端配置，详见 <a href="https://docs.djangoproject.com/en/1.10/ref/settings/#std:setting-EMAIL_HOST">Django文档</a></p>
+<p>Mooder默认使用Mailgun作为邮件发送服务商，在你的Mailgun后台可以看到相应域名的API BASE URL和KEY，将其填入如下配置中即可</p>
+<div class="code"><pre><span></span><span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="s1">&#39;发送邮件的邮箱&#39;</span>
+<span class="n">EMAIL_BACKEND</span> <span class="o">=</span> <span class="s1">&#39;django_mailgun.MailgunBackend&#39;</span>
+<span class="n">MAILGUN_ACCESS_KEY</span> <span class="o">=</span> <span class="s1">&#39;Mailgun KEY&#39;</span>
+<span class="n">MAILGUN_SERVER_NAME</span> <span class="o">=</span> <span class="s1">&#39;Mailgun API Base URL&#39;</span>
+</pre></div>
+
+
+<p>当然你也可以通过设置EMAIL_BACKEND来使用其他邮件发送方式，如SMTP：</p>
+<div class="code"><pre><span></span><span class="n">EMAIL_BACKEND</span> <span class="o">=</span> <span class="s1">&#39;django.core.mail.backends.smtp.EmailBackend&#39;</span>
+<span class="n">EMAIL_USE_TLS</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">EMAIL_HOST</span> <span class="o">=</span> <span class="s1">&#39;smtp.gmail.com&#39;</span>
+<span class="n">EMAIL_PORT</span> <span class="o">=</span> <span class="mi">587</span>
+<span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="s1">&#39;example@gmail.com&#39;</span>
+<span class="n">EMAIL_HOST_PASSWORD</span> <span class="o">=</span> <span class="s1">&#39;password&#39;</span>
+</pre></div>
+
+
+<h4 id="static_url-static_root">STATIC_URL / STATIC_ROOT<a class="headerlink" href="#static_url-static_root" title="Permanent link">#</a></h4>
+<p>静态文件相关配置。</p>
+<p>STATIC_URL是在URL中匹配静态文件请求的前缀，STATIC_ROOT是静态文件实际保存的目录。</p>
+<p>例如，Nginx配置如下：</p>
+<div class="code"><pre><span></span><span class="o">...</span>
+<span class="nt">location</span> <span class="o">^~</span> <span class="o">/</span><span class="nt">static</span><span class="o">/</span>
+<span class="p">{</span>
+    <span class="n">root</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="nb">static</span><span class="p">;</span>
+    <span class="n">expires</span> <span class="m">30</span><span class="n">d</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">location</span> <span class="o">/</span> <span class="p">{</span>
+    <span class="n">proxy_set_header</span> <span class="n">X</span><span class="o">-</span><span class="n">Real</span><span class="o">-</span><span class="n">IP</span>  <span class="err">$</span><span class="n">remote_addr</span><span class="p">;</span>
+    <span class="n">proxy_pass</span> <span class="n">http</span><span class="o">://</span><span class="m">127</span><span class="o">.</span><span class="m">0</span><span class="o">.</span><span class="m">0</span><span class="o">.</span><span class="m">1</span><span class="o">:</span><span class="m">8000</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">...</span>
+</pre></div>
+
+
+<p>当用户请求<code>http://example.com/static/css/app.css</code>的时候，Nginx会直接读取文件<code>/var/www/html/static/css/app.css</code>并发送给用户（不会经过Mooder处理）。</p>
+<p>当用户请求的PATH前缀不是/static/的时候，将会转发给本地的8000端口，交给Mooder处理。</p>
+<p>所以，mooder.settings中STATIC_URL就是该URL前缀，而STATIC_ROOT就是实际储存静态文件的本地路径。当配置好这个选项后，我们需要运行 <code>python3 manage.py collectstatic</code> 将所有静态文件生成到STATIC_ROOT目录中。从此刻起，静态文件就与Mooder无关了，你需要使用Nginx或Apache等中间件来显示静态文件。</p>
+<p>另外，在DEBUG模式下，我们无需生成静态文件，由Mooder显示静态文件。</p>
+<h4 id="media_url-media_root">MEDIA_URL / MEDIA_ROOT<a class="headerlink" href="#media_url-media_root" title="Permanent link">#</a></h4>
+<p>与STATIC_URL类似，MEDIA_ROOT是储存附件文件的目录，而MEDIA_URL则是这个URL前缀。</p>
+<p>附件文件初始化的时候不存在，是后期网站运行过程中用户上传的附件、头像等文件，所以无需运行<code>collectmedia</code>来生成。</p>
+<p>例如，配置如下：</p>
+<div class="code"><pre><span></span><span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s1">&#39;/static/&#39;</span>
+<span class="n">STATIC_ROOT</span> <span class="o">=</span> <span class="s1">&#39;/var/www/html/static&#39;</span>
+
+<span class="n">MEDIA_URL</span> <span class="o">=</span> <span class="s1">&#39;/media/&#39;</span>
+<span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="s1">&#39;/data&#39;</span>
+</pre></div>
+
+
+<p>相对应的Nginx配置文件则为：</p>
+<div class="code"><pre><span></span><span class="o">...</span>
+<span class="nt">location</span> <span class="o">^~</span> <span class="o">/</span><span class="nt">static</span><span class="o">/</span>
+<span class="p">{</span>
+    <span class="n">root</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="nb">static</span><span class="p">;</span>
+    <span class="n">expires</span> <span class="m">30</span><span class="n">d</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">location</span> <span class="o">^~</span> <span class="o">/</span><span class="nt">media</span><span class="o">/</span>
+<span class="p">{</span>
+    <span class="n">root</span> <span class="o">/</span><span class="n">data</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">location</span> <span class="o">/</span> <span class="p">{</span>
+    <span class="n">proxy_set_header</span> <span class="n">X</span><span class="o">-</span><span class="n">Real</span><span class="o">-</span><span class="n">IP</span>  <span class="err">$</span><span class="n">remote_addr</span><span class="p">;</span>
+    <span class="n">proxy_pass</span> <span class="n">http</span><span class="o">://</span><span class="m">127</span><span class="o">.</span><span class="m">0</span><span class="o">.</span><span class="m">0</span><span class="o">.</span><span class="m">1</span><span class="o">:</span><span class="m">8000</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="o">...</span>
+</pre></div>
+
+
+<p>如果你是使用docker-compose一键安装，则无需配置这些选项。自动化脚本会创建硬盘卷映射到/data目录下，即使容器此后更新或删除，都不会影响附件文件，你可以很容易地对其进行迁移；同时，自动化脚本也会自动映射<code>^/media/.*</code>请求到该目录中，无需再单独配置。</p>
+<h4 id="time_zone">TIME_ZONE<a class="headerlink" href="#time_zone" title="Permanent link">#</a></h4>
+<p>时区，默认为<code>'Asia/Shanghai'</code></p>
+<h4 id="language_code">LANGUAGE_CODE<a class="headerlink" href="#language_code" title="Permanent link">#</a></h4>
+<p>语言，暂时仅支持中文，请勿修改。（修改以后将会成为中文和其他语言混杂的奇怪形式）</p>
+<h4 id="user_level_range">USER_LEVEL_RANGE<a class="headerlink" href="#user_level_range" title="Permanent link">#</a></h4>
+<p>用户等级名称与范围。默认如下：</p>
+<div class="code"><pre><span></span><span class="n">USER_LEVEL_RANGE</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;anonymous&#39;</span><span class="p">,</span> <span class="s1">&#39;路人甲&#39;</span><span class="p">),</span> <span class="s1">&#39;default&#39;</span><span class="p">),</span>
+    <span class="p">((</span><span class="mi">30</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;practice&#39;</span><span class="p">,</span> <span class="s1">&#39;见习白帽子&#39;</span><span class="p">),</span> <span class="s1">&#39;secondary&#39;</span><span class="p">),</span>
+    <span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;general&#39;</span><span class="p">,</span> <span class="s1">&#39;正式白帽子&#39;</span><span class="p">),</span> <span class="s1">&#39;primary&#39;</span><span class="p">),</span>
+    <span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;senior&#39;</span><span class="p">,</span> <span class="s1">&#39;高级白帽子&#39;</span><span class="p">),</span> <span class="s1">&#39;success&#39;</span><span class="p">),</span>
+    <span class="p">((</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;supreme&#39;</span><span class="p">,</span> <span class="s1">&#39;核心白帽子&#39;</span><span class="p">),</span> <span class="s1">&#39;warning&#39;</span><span class="p">),</span>
+    <span class="p">((</span><span class="mi">2000</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;god&#39;</span><span class="p">,</span> <span class="s1">&#39;妇科圣手&#39;</span><span class="p">),</span> <span class="s1">&#39;danger&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>解释一下，<code>(0,30)</code>表示rank在0到30（含0不含30）的时候等级为“路人甲”；“anonymous”是该等级的识别名称，请勿修改；“default”是显示颜色，暂时只有上述6种颜色，也就是说如果你增加了一个等级，将必须有两个等级的颜色相同。</p>
+<p>如果你要对该配置进行修改，建议只修改“等级范围”和“名称”，例如修改为如下：</p>
+<div class="code"><pre><span></span><span class="n">USER_LEVEL_RANGE</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;anonymous&#39;</span><span class="p">,</span> <span class="s1">&#39;小学生&#39;</span><span class="p">),</span> <span class="s1">&#39;default&#39;</span><span class="p">),</span>
+    <span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;practice&#39;</span><span class="p">,</span> <span class="s1">&#39;初中生&#39;</span><span class="p">),</span> <span class="s1">&#39;secondary&#39;</span><span class="p">),</span>
+    <span class="p">((</span><span class="mi">300</span><span class="p">,</span> <span class="mi">1000</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;general&#39;</span><span class="p">,</span> <span class="s1">&#39;高中生&#39;</span><span class="p">),</span> <span class="s1">&#39;primary&#39;</span><span class="p">),</span>
+    <span class="p">((</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;senior&#39;</span><span class="p">,</span> <span class="s1">&#39;大学生&#39;</span><span class="p">),</span> <span class="s1">&#39;success&#39;</span><span class="p">),</span>
+    <span class="p">((</span><span class="mi">5000</span><span class="p">,</span> <span class="mi">20000</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;supreme&#39;</span><span class="p">,</span> <span class="s1">&#39;研究生&#39;</span><span class="p">),</span> <span class="s1">&#39;warning&#39;</span><span class="p">),</span>
+    <span class="p">((</span><span class="mi">20000</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;god&#39;</span><span class="p">,</span> <span class="s1">&#39;博士&#39;</span><span class="p">),</span> <span class="s1">&#39;danger&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>最后一个等级的范围是(xxx, -1)，指rank大于xxx的用户，-1请不要修改。</p>
+<h4 id="site">SITE<a class="headerlink" href="#site" title="Permanent link">#</a></h4>
+<p>网站SEO信息，默认为如下：</p>
+<div class="code"><pre><span></span><span class="n">SITE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;安全团队贡献平台&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="s1">&#39;一个团队使用的贡献平台&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;keyword&#39;</span><span class="p">:</span> <span class="s1">&#39;安全,团队,贡献&#39;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>title即为网站总标题。</p>
+<h4 id="account_activation_days">ACCOUNT_ACTIVATION_DAYS<a class="headerlink" href="#account_activation_days" title="Permanent link">#</a></h4>
+<p>激活邮件有效期，单位为天。默认为3天：</p>
+<div class="code"><pre><span></span>ACCOUNT_ACTIVATION_DAYS = 3
+</pre></div>
+
+
+<p>其他选项，如果需要自定义，可以查看Django文档。</p>
+          <aside class="copyright" role="note">
+            
+              Mooder团队贡献系统 &ndash;
+            
+            Documentation built with
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>
+            using the
+            <a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
+              Material
+            </a>
+            theme.
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../../install/category/" title="初始化分类">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                初始化分类
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../../advanced/manage/" title="管理员与审核员">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                管理员与审核员
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../..';
+      var repo_id  = 'phith0n/mooder';
+    </script>
+    <script src="../../assets/javascripts/application-997097ee0c.js"></script>
+    
+    
+  </body>
+</html>

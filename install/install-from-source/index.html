@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
+<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    
+      
+        <title>从源码安装 - Mooder团队贡献系统文档</title>
+      
+      
+      
+      
+        <meta name="author" content="phith0n">
+      
+    
+    <meta property="og:url" content="None">
+    <meta property="og:title" content="Mooder团队贡献系统文档">
+    <meta property="og:image" content="None/../../">
+    <meta name="apple-mobile-web-app-title" content="Mooder团队贡献系统文档">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    
+    <link rel="shortcut icon" type="image/x-icon" href="../../../../main.ico">
+    <link rel="icon" type="image/x-icon" href="../../../../main.ico">
+    <style>
+      @font-face {
+      	font-family: 'Icon';
+      	src: url('../../assets/fonts/icon.eot?52m981');
+      	src: url('../../assets/fonts/icon.eot?#iefix52m981')
+               format('embedded-opentype'),
+      		   url('../../assets/fonts/icon.woff?52m981')
+               format('woff'),
+      		   url('../../assets/fonts/icon.ttf?52m981')
+               format('truetype'),
+      		   url('../../assets/fonts/icon.svg?52m981#icon')
+               format('svg');
+      	font-weight: normal;
+      	font-style: normal;
+      }
+    </style>
+    <link rel="stylesheet" href="../../assets/stylesheets/application-a422ff04cc.css">
+    
+    
+      
+      
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono">
+      <style>
+        body, input {
+          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+        }
+        pre, code {
+          font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+        }
+      </style>
+    
+    
+    <script src="../../assets/javascripts/modernizr-4ab42b99fd.js"></script>
+    
+  </head>
+  
+  
+  
+  <body class=" ">
+    
+      
+      
+    
+    <div class="backdrop">
+      <div class="backdrop-paper"></div>
+    </div>
+    <input class="toggle" type="checkbox" id="toggle-drawer">
+    <input class="toggle" type="checkbox" id="toggle-search">
+    <label class="toggle-button overlay" for="toggle-drawer"></label>
+    <header class="header">
+      <nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        
+          <span class="path">
+            
+              
+                安装 <i class="icon icon-link"></i>
+              
+            
+          </span>
+        
+        从源码安装
+      </div>
+    </div>
+    
+    
+    <div class="button button-search" role="button" aria-label="Search">
+      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
+    </div>
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+    </header>
+    <main class="main">
+      
+      <div class="drawer">
+        <nav aria-label="Navigation">
+  
+  <a href="https://github.com/phith0n/mooder" class="project">
+    <div class="banner">
+      
+      <div class="name">
+        <strong>
+          Mooder团队贡献系统文档
+          <span class="version">
+            
+          </span>
+        </strong>
+        
+          <br>
+          phith0n/mooder
+        
+      </div>
+    </div>
+  </a>
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            
+            <a href="https://github.com/phith0n/mooder/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/phith0n/mooder/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+      <div class="toc">
+        <ul>
+          
+            
+  <li>
+    <a class="" title="介绍" href="../..">
+      介绍
+    </a>
+    
+  </li>
+
+          
+            
+  <li>
+    <span class="section">安装</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="从Docker一键安装" href="../install-from-docker/">
+      从Docker一键安装
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="current" title="从源码安装" href="./">
+      从源码安装
+    </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="1. 修改环境变量" href="#1">
+                1. 修改环境变量
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="2. 修改配置文件" href="#2">
+                2. 修改配置文件
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="3. 数据库配置" href="#3">
+                3. 数据库配置
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="4. 生成加密密钥" href="#4">
+                4. 生成加密密钥
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="5. 启动Mooder" href="#5-mooder">
+                5. 启动Mooder
+              </a>
+            </li>
+          
+        </ul>
+      
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="初始化分类" href="../category/">
+      初始化分类
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">自定义配置</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="配置文件说明" href="../../setting/info/">
+      配置文件说明
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <span class="section">高级</span>
+    <ul>
+      
+        
+  <li>
+    <a class="" title="管理员与审核员" href="../../advanced/manage/">
+      管理员与审核员
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="修改默认端口" href="../../advanced/edit-port/">
+      修改默认端口
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="修改管理地址" href="../../advanced/edit-admin-url/">
+      修改管理地址
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="项目更新" href="../../advanced/upgrade/">
+      项目更新
+    </a>
+    
+  </li>
+
+      
+    </ul>
+  </li>
+
+          
+            
+  <li>
+    <a class="" title="关于" href="../../about/">
+      关于
+    </a>
+    
+  </li>
+
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+      </div>
+      <article class="article">
+        <div class="wrapper">
+          
+          <h1 id="_1">从源码安装<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
+<p>除了使用docker一键安装以外，Mooder还支持从源码安装。这一章我介绍一下如何从源码安装Mooder，并配置数据库。</p>
+<p>首先，Mooder是基于Python3的（不兼容Python2.7），请先安装Python 3。</p>
+<h2 id="1">1. 修改环境变量<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
+<p>安装必要依赖：</p>
+<div class="code"><pre><span></span>apt-get update &amp;&amp; apt-get install libpq-dev libjpeg-dev zlib1g-dev libfreetype6-dev
+</pre></div>
+
+
+<p>拉取代码，进入源码目录。</p>
+<p>默认环境变量文件.env.default，将其改名为.env</p>
+<div class="code"><pre><span></span>cp .env.default .env
+</pre></div>
+
+
+<p>其中包含一些环境变量，具体详情请查看 <a href="../../install/install-from-docker/">从Docker一键安装</a> 一章。</p>
+<p>环境变量实际上是预定义的一些配置，我们也可以无视环境变量，直接在配置文件中修改这些配置。</p>
+<h2 id="2">2. 修改配置文件<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
+<p>Mooder包含一个基础配置文件（mooder/settings.py）和一个生产环境配置文件(mooder/settings_production.py)。二者是继承关系，settings_production.py继承所有settings.py定义的配置，并通过定义相同名字的变量来修改配置。</p>
+<p>如，默认settings.py中定义<code>DEBUG=True</code>，即开启调试模式；而settings_production.py中定义<code>DEBUG=False</code>，就覆盖了settings.py的设置，关闭了Django的调试模式。</p>
+<p>通常情况下，我们只需要修改settings_production.py中的选项即可完成对Mooder的配置。如果你需要更多自定义的配置，请阅读后面的文档。</p>
+<p>settings_production.py默认如下：</p>
+<div class="code"><pre><span></span><span class="kn">from</span> <span class="nn">mooder.settings</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">]</span>
+<span class="n">SECURE_CONTENT_TYPE_NOSNIFF</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">SECURE_BROWSER_XSS_FILTER</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="n">X_FRAME_OPTIONS</span> <span class="o">=</span> <span class="s1">&#39;DENY&#39;</span>
+
+<span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DB_ENGINE&#39;</span><span class="p">,</span> <span class="s1">&#39;django.db.backends.postgresql&#39;</span><span class="p">)</span> <span class="p">,</span>
+        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DB_NAME&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;USER&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DB_USER&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;PASSWORD&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DB_PASSWORD&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;HOST&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DB_HOST&#39;</span><span class="p">),</span>
+        <span class="s1">&#39;PORT&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DB_PORT&#39;</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;EMAIL_HOST_USER&#39;</span><span class="p">)</span>
+<span class="n">EMAIL_BACKEND</span> <span class="o">=</span> <span class="s1">&#39;django_mailgun.MailgunBackend&#39;</span>
+<span class="n">MAILGUN_ACCESS_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;MAILGUN_ACCESS_KEY&#39;</span><span class="p">)</span>
+<span class="n">MAILGUN_SERVER_NAME</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;MAILGUN_SERVER_NAME&#39;</span><span class="p">)</span>
+
+<span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s1">&#39;/static/&#39;</span>
+<span class="n">STATIC_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;mooder&#39;</span><span class="p">,</span> <span class="s1">&#39;static_cdn&#39;</span><span class="p">)</span>
+
+<span class="n">MEDIA_URL</span> <span class="o">=</span> <span class="s1">&#39;/media/&#39;</span>
+<span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="s1">&#39;/data&#39;</span>
+</pre></div>
+
+
+<p>第一行说明了settings_production.py与settings.py的继承关系。后面开始是覆盖默认项的配置项。</p>
+<p>其中有几个选项必须说明：</p>
+<ul>
+<li>DEBUG 调试模式，生产环境下务必关闭调试模式。</li>
+<li>ALLOWED_HOSTS 允许哪些Host访问，默认为*，不限制。</li>
+<li>DATABASES 数据库配置。可见Mooder使用了环境变量来设置数据库。</li>
+<li>EMAIL_HOST_USER 邮件发送时官方发件人的邮箱。</li>
+<li>MAILGUN_ACCESS_KEY Mailgun注册时的API KEY。</li>
+<li>MAILGUN_SERVER_NAME 邮件服务器域名（关于Mailgun邮件配置部分，参考 <a href="../../install/install-from-docker/">从Docker一键安装</a> 一章）。</li>
+<li>MEDIA_ROOT 数据文件（附件、头像等）存放地址，一定要有写权限。</li>
+</ul>
+<p>其他未提到的选项，可以不用修改。</p>
+<h2 id="3">3. 数据库配置<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
+<p>Mooder默认使用postgres数据库，但其也可以使用Django支持的任何数据库引擎，具体配置方法见 <a href="https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-DATABASES">Django文档</a></p>
+<p>example 1. postgres配置：</p>
+<div class="code"><pre><span></span>DATABASES = {
+    &#39;default&#39;: {
+        &#39;ENGINE&#39;: &#39;django.db.backends.postgresql&#39;,
+        &#39;NAME&#39;: &#39;mydatabase&#39;,
+        &#39;USER&#39;: &#39;mydatabaseuser&#39;,
+        &#39;PASSWORD&#39;: &#39;mypassword&#39;,
+        &#39;HOST&#39;: &#39;127.0.0.1&#39;,
+        &#39;PORT&#39;: &#39;5432&#39;,
+    }
+}
+</pre></div>
+
+
+<p>example 2. mysql配置</p>
+<div class="code"><pre><span></span>DATABASES = {
+    &#39;default&#39;: {
+        &#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,
+        &#39;NAME&#39;: &#39;test&#39;,
+        &#39;USER&#39;: &#39;root&#39;,
+        &#39;PASSWORD&#39;: &#39;root&#39;,
+        &#39;HOST&#39;: &#39;127.0.0.1&#39;,
+        &#39;PORT&#39;: &#39;3306&#39;,
+    }
+}
+</pre></div>
+
+
+<p>example 3. sqlite配置</p>
+<div class="code"><pre><span></span>DATABASES = {
+    &#39;default&#39;: {
+        &#39;ENGINE&#39;: &#39;django.db.backends.sqlite3&#39;,
+        &#39;NAME&#39;: os.path.join(BASE_DIR, &#39;db.sqlite3&#39;),
+    }
+}
+</pre></div>
+
+
+<p>注意，使用mysql或postgres前需要安装一些必要的库。例如，使用postgres需要安装如下库：</p>
+<div class="code"><pre><span></span>sudo apt-get install postgresql-client
+pip install psycopg2
+</pre></div>
+
+
+<p>Mysql需要安装如下库：</p>
+<div class="code"><pre><span></span>sudo apt-get install mysql-client
+pip install mysqlclient
+</pre></div>
+
+
+<p>更多支持与配置（如数据库字符）还是参考Django的文档。</p>
+<h2 id="4">4. 生成加密密钥<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
+<p>在settings.py中有一个SECRET_KEY（加密密钥），你可以直接给其赋予一个随机值：</p>
+<div class="code"><pre><span></span>SECRET_KEY = &#39;any random string&#39;
+</pre></div>
+
+
+<p>默认情况下，Mooder会从项目根目录读取一个文件“.secretkey”，将其内容作为项目的密钥。所以，我们可以执行以下命令生成一个64位长度的密钥文件：</p>
+<div class="code"><pre><span></span>sudo apt-get install openssl
+openssl rand -out .secretkey 64
+</pre></div>
+
+
+<h2 id="5-mooder">5. 启动Mooder<a class="headerlink" href="#5-mooder" title="Permanent link">#</a></h2>
+<p>首先初始化数据库：</p>
+<div class="code"><pre><span></span>python3 ./manage.py migrate
+</pre></div>
+
+
+<p>生成静态文件：</p>
+<div class="code"><pre><span></span>python3 ./manage.py collectstatic
+</pre></div>
+
+
+<p>运行：</p>
+<div class="code"><pre><span></span>python3 ./manage.py runserver
+</pre></div>
+
+
+<p>以上命令会将mooder运行在默认端口（8000）。</p>
+<p>生产环境下不建议直接使用Django自带的Webserver，请使用nginx + gunicorn或Apache mod-uwsgi部署。具体部署方法参考 <a href="https://docs.djangoproject.com/en/dev/howto/deployment/">Django文档</a>。</p>
+          <aside class="copyright" role="note">
+            
+              Mooder团队贡献系统 &ndash;
+            
+            Documentation built with
+            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>
+            using the
+            <a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
+              Material
+            </a>
+            theme.
+          </aside>
+          
+            <footer class="footer">
+              
+  <nav class="pagination" aria-label="Footer">
+    <div class="previous">
+      
+        <a href="../install-from-docker/" title="从Docker一键安装">
+          <span class="direction">
+            Previous
+          </span>
+          <div class="page">
+            <div class="button button-previous" role="button" aria-label="Previous">
+              <i class="icon icon-back"></i>
+            </div>
+            <div class="stretch">
+              <div class="title">
+                从Docker一键安装
+              </div>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+    <div class="next">
+      
+        <a href="../category/" title="初始化分类">
+          <span class="direction">
+            Next
+          </span>
+          <div class="page">
+            <div class="stretch">
+              <div class="title">
+                初始化分类
+              </div>
+            </div>
+            <div class="button button-next" role="button" aria-label="Next">
+              <i class="icon icon-forward"></i>
+            </div>
+          </div>
+        </a>
+      
+    </div>
+  </nav>
+
+            </footer>
+          
+        </div>
+      </article>
+      <div class="results" role="status" aria-live="polite">
+        <div class="scrollable">
+          <div class="wrapper">
+            <div class="meta"></div>
+            <div class="list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      var base_url = '../..';
+      var repo_id  = 'phith0n/mooder';
+    </script>
+    <script src="../../assets/javascripts/application-997097ee0c.js"></script>
+    
+    
+  </body>
+</html>
