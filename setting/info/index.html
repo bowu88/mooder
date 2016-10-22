@@ -396,7 +396,7 @@ openssl rand -out .secretkey 64
 <div class="code"><pre><span></span><span class="o">...</span>
 <span class="nt">location</span> <span class="o">^~</span> <span class="o">/</span><span class="nt">static</span><span class="o">/</span>
 <span class="p">{</span>
-    <span class="n">root</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="nb">static</span><span class="p">;</span>
+    <span class="n">root</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="p">;</span>
     <span class="n">expires</span> <span class="m">30</span><span class="n">d</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nt">location</span> <span class="o">/</span> <span class="p">{</span>
@@ -419,7 +419,7 @@ openssl rand -out .secretkey 64
 <span class="n">STATIC_ROOT</span> <span class="o">=</span> <span class="s1">&#39;/var/www/html/static&#39;</span>
 
 <span class="n">MEDIA_URL</span> <span class="o">=</span> <span class="s1">&#39;/media/&#39;</span>
-<span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="s1">&#39;/data&#39;</span>
+<span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="s1">&#39;/data/media&#39;</span>
 </pre></div>
 
 
@@ -427,7 +427,7 @@ openssl rand -out .secretkey 64
 <div class="code"><pre><span></span><span class="o">...</span>
 <span class="nt">location</span> <span class="o">^~</span> <span class="o">/</span><span class="nt">static</span><span class="o">/</span>
 <span class="p">{</span>
-    <span class="n">root</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="o">/</span><span class="nb">static</span><span class="p">;</span>
+    <span class="n">root</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">html</span><span class="p">;</span>
     <span class="n">expires</span> <span class="m">30</span><span class="n">d</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nt">location</span> <span class="o">^~</span> <span class="o">/</span><span class="nt">media</span><span class="o">/</span>
