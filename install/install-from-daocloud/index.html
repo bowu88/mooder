@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>初始化分类 - Mooder团队贡献系统文档</title>
+        <title>从Daocloud一键安装 - Mooder团队贡献系统文档</title>
       
       
       
@@ -96,7 +96,7 @@
             
           </span>
         
-        初始化分类
+        从Daocloud一键安装
       </div>
     </div>
     
@@ -198,23 +198,45 @@
       
         
   <li>
-    <a class="" title="从Daocloud一键安装" href="../install-from-daocloud/">
+    <a class="current" title="从Daocloud一键安装" href="./">
       从Daocloud一键安装
     </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="创建硬盘卷" href="#_1">
+                创建硬盘卷
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="创建数据库容器" href="#_2">
+                创建数据库容器
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="创建应用" href="#_3">
+                创建应用
+              </a>
+            </li>
+          
+        </ul>
+      
     
   </li>
 
       
         
   <li>
-    <a class="current" title="初始化分类" href="./">
+    <a class="" title="初始化分类" href="../category/">
       初始化分类
     </a>
-    
-      
-        
-      
-      
     
   </li>
 
@@ -305,15 +327,27 @@
       <article class="article">
         <div class="wrapper">
           
-          <h1 id="_1">初始化分类<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
-<p>使用docker-compose一键安装的Mooder，将会自动创建超级管理员账号。用源码安装的Mooder不会创建管理员账号，你可以执行如下命令创建一个新的管理员：</p>
-<div class="code"><pre><span></span>python3 manage.py createsuperuser
-</pre></div>
-
-
-<p>关于管理员与审核员的相关说明，移步<a href="../../advanced/manage/">这里</a></p>
-<p>登录管理员后台<code>http://yoursite.com/admin/</code>，即可添加分类。只有添加了分类，用户才能正常提交贡献。</p>
-<p><img alt="" src="../media/14771603530083/14771609689310.jpg" /></p>
+          <h1 id="daocloud">使用Daocloud一键安装<a class="headerlink" href="#daocloud" title="Permanent link">#</a></h1>
+<p>如果你没有VPS或云主机，可以选择<a href="https://www.daocloud.io/">Daocloud</a>进行一键安装。实际上过程和使用docker-compose是一致的，只不过Daocloud提供了一些图形化的界面，和更快地构建方式。</p>
+<p>官方演示站 <a href="http://mooder.daoaoo.io">http://mooder.daoaoo.io</a> 是运行在Daocloud上，Daocloud是一个基于Docker的Paas平台，提供免费和收费两个选项。官方演示站使用的“4x专业版”，每个月48元。</p>
+<h2 id="_1">创建硬盘卷<a class="headerlink" href="#_1" title="Permanent link">#</a></h2>
+<p>首先注册Daocloud。注册完成后创建一个Volume，这个硬盘卷存放附件、头像等文件资源：</p>
+<p><img alt="" src="../media/14772291276224/14772295269575.jpg" /></p>
+<h2 id="_2">创建数据库容器<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<p>点击左侧“服务集成”，选择Postgres，创建服务实例，填入名字就好了。</p>
+<p>现在Docker下暂时只支持使用Postgres，如果你想使用其他数据库，可以使用“<a href="../install-from-source/">源码安装</a>”的方式安装在自己的服务器上。</p>
+<p>创建完成后，将会得到Postgres的地址、用户名和密码，记下来，后面填写到环境变量中。</p>
+<p><img alt="" src="../media/14772291276224/14772300742034.jpg" /></p>
+<h2 id="_3">创建应用<a class="headerlink" href="#_3" title="Permanent link">#</a></h2>
+<p>然后打开 <a href="https://hub.daocloud.io/repos/550ddb55-c6c7-4c21-8812-de334b92e2ae">https://hub.daocloud.io/repos/550ddb55-c6c7-4c21-8812-de334b92e2ae</a> ，这是最新镜像。</p>
+<p>点击右侧的“快速部署”，填写应用名称、运行环境（建议选择2X，也就是256M内存），端口80，</p>
+<p>服务绑定，选择刚才创建的数据库；Volume绑定，选择刚才创建的硬盘卷，路径填写<code>/data</code>。</p>
+<p><img alt="" src="../media/14772291276224/14772302042830.jpg" /></p>
+<p>自定义环境变量，填写如下一些环境变量（每个环境变量的意义，请参考<a href="../install-from-docker/">前面的文档</a>）：</p>
+<p><img alt="" src="../media/14772291276224/14772303109199.jpg" /></p>
+<p>启动命令填写 <code>--url-alias /media /data</code>，意思是将url中的/media请求映射到/data目录中，也就是映射到前面创建的硬盘卷中。</p>
+<p><img alt="" src="../media/14772291276224/14772305600132.jpg" /></p>
+<p>OK，创建完成后，就开启运行即可。</p>
           <aside class="copyright" role="note">
             
               Mooder团队贡献系统 &ndash;
@@ -332,7 +366,7 @@
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href="../install-from-daocloud/" title="从Daocloud一键安装">
+        <a href="../install-from-source/" title="从源码安装">
           <span class="direction">
             Previous
           </span>
@@ -342,7 +376,7 @@
             </div>
             <div class="stretch">
               <div class="title">
-                从Daocloud一键安装
+                从源码安装
               </div>
             </div>
           </div>
@@ -351,14 +385,14 @@
     </div>
     <div class="next">
       
-        <a href="../../setting/info/" title="配置文件说明">
+        <a href="../category/" title="初始化分类">
           <span class="direction">
             Next
           </span>
           <div class="page">
             <div class="stretch">
               <div class="title">
-                配置文件说明
+                初始化分类
               </div>
             </div>
             <div class="button button-next" role="button" aria-label="Next">
