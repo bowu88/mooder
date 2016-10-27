@@ -349,13 +349,11 @@
 
 
 <p>拉取代码，进入源码目录。</p>
-<p>默认环境变量文件.env.default，将其改名为.env</p>
-<div class="code"><pre><span></span>cp .env.default .env
+<p>安装python依赖：</p>
+<div class="code"><pre><span></span>pip3 install -r requirements.txt
 </pre></div>
 
 
-<p>其中包含一些环境变量，具体详情请查看 <a href="../../install/install-from-docker/">从Docker一键安装</a> 一章。</p>
-<p>环境变量实际上是预定义的一些配置，我们也可以无视环境变量，直接在配置文件中修改这些配置。</p>
 <h2 id="2">2. 修改配置文件<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
 <p>Mooder包含一个基础配置文件（mooder/settings.py）和一个生产环境配置文件(mooder/settings_production.py)。二者是继承关系，settings_production.py继承所有settings.py定义的配置，并通过定义相同名字的变量来修改配置。</p>
 <p>如，默认settings.py中定义<code>DEBUG=True</code>，即开启调试模式；而settings_production.py中定义<code>DEBUG=False</code>，就覆盖了settings.py的设置，关闭了Django的调试模式。</p>
