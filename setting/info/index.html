@@ -207,6 +207,15 @@
       
         
   <li>
+    <a class="" title="邮箱配置" href="../../install/email/">
+      邮箱配置
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
     <a class="" title="初始化分类" href="../../install/category/">
       初始化分类
     </a>
@@ -377,27 +386,9 @@ openssl rand -out .secretkey 64
 <p>允许访问的host头，可为多个，如： <code>['example.com', 'www.example.com']</code>。不限制则设置为<code>['*']</code>。</p>
 <p>调试模式关闭时，必须设置这个选项。</p>
 <h4 id="databases">DATABASES<a class="headerlink" href="#databases" title="Permanent link">#</a></h4>
-<p>数据库配置选项，详见 <a href="https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-DATABASES">Django文档</a> 和前一章说明。</p>
-<h4 id="email_host_user-email_backend-mailgun_access_key-mailgun_server_name">EMAIL_HOST_USER / EMAIL_BACKEND / MAILGUN_ACCESS_KEY / MAILGUN_SERVER_NAME<a class="headerlink" href="#email_host_user-email_backend-mailgun_access_key-mailgun_server_name" title="Permanent link">#</a></h4>
-<p>邮件客户端配置，详见 <a href="https://docs.djangoproject.com/en/1.10/ref/settings/#std:setting-EMAIL_HOST">Django文档</a></p>
-<p>Mooder默认使用Mailgun作为邮件发送服务商，在你的Mailgun后台可以看到相应域名的API BASE URL和KEY，将其填入如下配置中即可</p>
-<div class="code"><pre><span></span><span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="s1">&#39;发送邮件的邮箱&#39;</span>
-<span class="n">EMAIL_BACKEND</span> <span class="o">=</span> <span class="s1">&#39;django_mailgun.MailgunBackend&#39;</span>
-<span class="n">MAILGUN_ACCESS_KEY</span> <span class="o">=</span> <span class="s1">&#39;Mailgun KEY&#39;</span>
-<span class="n">MAILGUN_SERVER_NAME</span> <span class="o">=</span> <span class="s1">&#39;Mailgun API Base URL&#39;</span>
-</pre></div>
-
-
-<p>当然你也可以通过设置EMAIL_BACKEND来使用其他邮件发送方式，如SMTP：</p>
-<div class="code"><pre><span></span><span class="n">EMAIL_BACKEND</span> <span class="o">=</span> <span class="s1">&#39;django.core.mail.backends.smtp.EmailBackend&#39;</span>
-<span class="n">EMAIL_USE_TLS</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="n">EMAIL_HOST</span> <span class="o">=</span> <span class="s1">&#39;smtp.gmail.com&#39;</span>
-<span class="n">EMAIL_PORT</span> <span class="o">=</span> <span class="mi">587</span>
-<span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="s1">&#39;example@gmail.com&#39;</span>
-<span class="n">EMAIL_HOST_PASSWORD</span> <span class="o">=</span> <span class="s1">&#39;password&#39;</span>
-</pre></div>
-
-
+<p>数据库配置选项，详见 <a href="https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-DATABASES">Django文档</a> 。</p>
+<h4 id="email_host_user-email_backend">EMAIL_HOST_USER / EMAIL_BACKEND<a class="headerlink" href="#email_host_user-email_backend" title="Permanent link">#</a></h4>
+<p>邮件客户端配置，详见 <a href="https://docs.djangoproject.com/en/1.10/ref/settings/#std:setting-EMAIL_HOST">Django文档</a> 和 <a href="../../install/email/">邮箱配置</a> 一节。</p>
 <h4 id="static_url-static_root">STATIC_URL / STATIC_ROOT<a class="headerlink" href="#static_url-static_root" title="Permanent link">#</a></h4>
 <p>静态文件相关配置。</p>
 <p>STATIC_URL是在URL中匹配静态文件请求的前缀，STATIC_ROOT是静态文件实际保存的目录。</p>

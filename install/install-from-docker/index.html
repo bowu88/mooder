@@ -197,20 +197,14 @@
             </li>
           
             <li class="anchor">
-              <a title="2. 注册Mailgun" href="#2-mailgun">
-                2. 注册Mailgun
+              <a title="2. 配置环境变量" href="#2">
+                2. 配置环境变量
               </a>
             </li>
           
             <li class="anchor">
-              <a title="3. 配置环境变量" href="#3">
-                3. 配置环境变量
-              </a>
-            </li>
-          
-            <li class="anchor">
-              <a title="4. 一键安装" href="#4">
-                4. 一键安装
+              <a title="3. 一键安装" href="#3">
+                3. 一键安装
               </a>
             </li>
           
@@ -233,6 +227,15 @@
   <li>
     <a class="" title="从Daocloud一键安装" href="../install-from-daocloud/">
       从Daocloud一键安装
+    </a>
+    
+  </li>
+
+      
+        
+  <li>
+    <a class="" title="邮箱配置" href="../email/">
+      邮箱配置
     </a>
     
   </li>
@@ -350,11 +353,7 @@ python3 get-pip.py
 <p>再<a href="https://docs.docker.com/compose/install/">安装docker-compose</a>。最简单的方式，可以选择直接使用<code>pip install docker-compose</code>安装。此时docker-compose版本是1.8.1</p>
 <p><img alt="" src="../media/14768944062294/14768945348615.jpg" /></p>
 <p>至此，所有依赖安装完毕。</p>
-<h3 id="2-mailgun">2. 注册Mailgun<a class="headerlink" href="#2-mailgun" title="Permanent link">#</a></h3>
-<p>一键安装环境下的邮件客户端可以选择Mailgun( http://www.mailgun.com/ ) 或SMTP。</p>
-<p><em>默认使用mailgun:</em> 注册Mailgun，并绑定自己的域名作为邮件发送方(或使用官方提供的一个域名邮箱)。在域名详情页面找到自己的API BASE URL和API KEY，后面会用到。</p>
-<p><img alt="" src="../media/14768944062294/14768953711152.jpg" /></p>
-<h3 id="3">3. 配置环境变量<a class="headerlink" href="#3" title="Permanent link">#</a></h3>
+<h3 id="2">2. 配置环境变量<a class="headerlink" href="#2" title="Permanent link">#</a></h3>
 <p>然后拉取代码，进入代码目录。</p>
 <p>将默认环境变量文件<code>.env.default</code>重命名为<code>.env</code>，并修改这个文件，配置其中的环境变量：</p>
 <div class="code"><pre><span></span>cp .env.default .env
@@ -377,19 +376,19 @@ INIT_ADMIN_NICKNAME=admin
 INIT_ADMIN_PASSWORD=a123123123
 
 # Email Settings For MailGun
-EMAIL_BACKEND=django_mailgun.MailgunBackend
-MAILGUN_SERVER_NAME=example.com
-MAILGUN_ACCESS_KEY=key-mailgun
-EMAIL_HOST_USER=no-reply@example.com
+# EMAIL_BACKEND=django_mailgun.MailgunBackend
+# MAILGUN_SERVER_NAME=example.com
+# MAILGUN_ACCESS_KEY=key-mailgun
+# EMAIL_HOST_USER=no-reply@example.com
 
-# Email Settings For SMTP
-# DEFAULT_FROM_EMAIL=Test Server &lt;root@webserver&gt;
-# EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
-# EMAIL_HOST=localhost
-# EMAIL_PORT=465
-# EMAIL_HOST_USER=root@webserver
-# EMAIL_HOST_PASSWORD=password
-# EMAIL_USE_SSL=True
+Email Settings For SMTP
+DEFAULT_FROM_EMAIL=Test Server &lt;root@webserver&gt;
+EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
+EMAIL_HOST=localhost
+EMAIL_PORT=465
+EMAIL_HOST_USER=root@webserver
+EMAIL_HOST_PASSWORD=password
+EMAIL_USE_SSL=True
 </pre></div>
 
 
@@ -399,26 +398,10 @@ EMAIL_HOST_USER=no-reply@example.com
 <li><code>INIT_ADMIN_PASSWORD</code> 初始化时的管理员密码</li>
 <li><code>INIT_ADMIN_NICKNAME</code> 初始化时的管理员昵称</li>
 </ul>
-<p>如果使用Mailgun，则需要填写以下环境变量：</p>
-<ul>
-<li><code>EMAIL_BACKEND</code> 值为 <code>django_mailgun.MailgunBackend</code>，说明使用了Mailgun</li>
-<li><code>MAILGUN_SERVER_NAME</code> 刚才在MAILGUN里找到的API Base URL，只用填写<code>https://api.mailgun.net/v3/</code>后面的部分，如<code>mail.leavesongs.com</code></li>
-<li><code>MAILGUN_ACCESS_KEY</code> 刚才在MAILGUN里找到的API Key</li>
-<li><code>EMAIL_HOST_USER</code> 发邮件时默认使用的邮箱，比如 <code>no-reply@mail.leavesongs.com</code> ，这个可以自己定义，但后缀一定是你绑定Mailgun的域名</li>
-</ul>
-<p>如果使用SMTP，则填写以下环境变量（文件中注释的部分）</p>
-<ul>
-<li><code>EMAIL_BACKEND</code> 值为 <code>django.core.mail.backends.smtp.EmailBackend</code>，说明使用SMTP做发信方式</li>
-<li><code>EMAIL_HOST</code> SMTP服务主机地址</li>
-<li><code>EMAIL_PORT</code> SMTP服务端口</li>
-<li><code>EMAIL_HOST_USER</code> SMTP登录用户名，也是后面邮件时发件人的邮箱</li>
-<li><code>EMAIL_HOST_PASSWORD</code> SMTP登录密码</li>
-<li><code>EMAIL_USE_SSL</code> SMTP发送是否使用SSL，设置为<code>False</code>或删除这个环境变量，则表示不使用SSL</li>
-<li><code>EMAIL_USE_TLS</code> SMTP发送是否使用TLS，同SSL</li>
-</ul>
+<p>和<a href="../email/">Email的相关配置项</a>。</p>
 <p>其他的如<code>DB_HOST</code>、<code>DB_PASSWORD</code>之类的不要修改，否则可能导致数据库连接错误。文档后续内容会说明如何修改这些值才能保证不出错。</p>
 <p>保存.env文件，完成环境变量的配置。</p>
-<h3 id="4">4. 一键安装<a class="headerlink" href="#4" title="Permanent link">#</a></h3>
+<h3 id="3">3. 一键安装<a class="headerlink" href="#3" title="Permanent link">#</a></h3>
 <p>执行如下命令，一键安装并启动mooder:</p>
 <div class="code"><pre><span></span>docker-compose up -d
 </pre></div>

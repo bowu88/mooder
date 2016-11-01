@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>从源码安装 - Mooder团队贡献系统文档</title>
+        <title>邮箱配置 - Mooder团队贡献系统文档</title>
       
       
       
@@ -96,7 +96,7 @@
             
           </span>
         
-        从源码安装
+        邮箱配置
       </div>
     </div>
     
@@ -189,54 +189,9 @@
       
         
   <li>
-    <a class="current" title="从源码安装" href="./">
+    <a class="" title="从源码安装" href="../install-from-source/">
       从源码安装
     </a>
-    
-      
-        
-      
-      
-        <ul>
-          
-            <li class="anchor">
-              <a title="1. 修改环境变量" href="#1">
-                1. 修改环境变量
-              </a>
-            </li>
-          
-            <li class="anchor">
-              <a title="2. 修改配置文件" href="#2">
-                2. 修改配置文件
-              </a>
-            </li>
-          
-            <li class="anchor">
-              <a title="3. 数据库配置" href="#3">
-                3. 数据库配置
-              </a>
-            </li>
-          
-            <li class="anchor">
-              <a title="4. 生成加密密钥" href="#4">
-                4. 生成加密密钥
-              </a>
-            </li>
-          
-            <li class="anchor">
-              <a title="5. 创建初始化管理员账号" href="#5">
-                5. 创建初始化管理员账号
-              </a>
-            </li>
-          
-            <li class="anchor">
-              <a title="6. 启动Mooder" href="#6-mooder">
-                6. 启动Mooder
-              </a>
-            </li>
-          
-        </ul>
-      
     
   </li>
 
@@ -252,9 +207,36 @@
       
         
   <li>
-    <a class="" title="邮箱配置" href="../email/">
+    <a class="current" title="邮箱配置" href="./">
       邮箱配置
     </a>
+    
+      
+        
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="注册Mailgun" href="#mailgun">
+                注册Mailgun
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="从Docker安装（包括daocloud）请阅读这一节" href="#dockerdaocloud">
+                从Docker安装（包括daocloud）请阅读这一节
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="从源码安装请阅读这一节" href="#_2">
+                从源码安装请阅读这一节
+              </a>
+            </li>
+          
+        </ul>
+      
     
   </li>
 
@@ -354,53 +336,43 @@
       <article class="article">
         <div class="wrapper">
           
-          <h1 id="_1">从源码安装<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
-<p>除了使用docker一键安装以外，Mooder还支持从源码安装。这一章我介绍一下如何从源码安装Mooder，并配置数据库。</p>
-<p>首先，Mooder是基于Python3的（不兼容Python2.7），请先安装Python 3。</p>
-<h2 id="1">1. 修改环境变量<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
-<p>安装必要依赖：</p>
-<div class="code"><pre><span></span>apt-get update &amp;&amp; apt-get install libpq-dev libjpeg-dev zlib1g-dev libfreetype6-dev
-</pre></div>
-
-
-<p>拉取代码，进入源码目录。</p>
-<p>安装python依赖：</p>
-<div class="code"><pre><span></span>pip3 install -r requirements.txt
-</pre></div>
-
-
-<h2 id="2">2. 修改配置文件<a class="headerlink" href="#2" title="Permanent link">#</a></h2>
-<p>Mooder包含一个基础配置文件（mooder/settings.py）和一个生产环境配置文件(mooder/settings_production.py)。二者是继承关系，settings_production.py继承所有settings.py定义的配置，并通过定义相同名字的变量来修改配置。</p>
-<p>如，默认settings.py中定义<code>DEBUG=True</code>，即开启调试模式；而settings_production.py中定义<code>DEBUG=False</code>，就覆盖了settings.py的设置，关闭了Django的调试模式。</p>
-<p>通常情况下，我们只需要修改settings_production.py中的选项即可完成对Mooder的配置。如果你需要更多自定义的配置，请阅读后面的文档。</p>
-<p>settings_production.py默认如下：</p>
-<div class="code"><pre><span></span><span class="kn">from</span> <span class="nn">mooder.settings</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">DEBUG</span> <span class="o">=</span> <span class="bp">False</span>
-<span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;*&#39;</span><span class="p">]</span>
-<span class="n">SECURE_CONTENT_TYPE_NOSNIFF</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="n">SECURE_BROWSER_XSS_FILTER</span> <span class="o">=</span> <span class="bp">True</span>
-<span class="n">X_FRAME_OPTIONS</span> <span class="o">=</span> <span class="s1">&#39;DENY&#39;</span>
-
-<span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DB_ENGINE&#39;</span><span class="p">,</span> <span class="s1">&#39;django.db.backends.postgresql&#39;</span><span class="p">)</span> <span class="p">,</span>
-        <span class="s1">&#39;NAME&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DB_NAME&#39;</span><span class="p">),</span>
-        <span class="s1">&#39;USER&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DB_USER&#39;</span><span class="p">),</span>
-        <span class="s1">&#39;PASSWORD&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DB_PASSWORD&#39;</span><span class="p">),</span>
-        <span class="s1">&#39;HOST&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DB_HOST&#39;</span><span class="p">),</span>
-        <span class="s1">&#39;PORT&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DB_PORT&#39;</span><span class="p">),</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;EMAIL_HOST_USER&#39;</span><span class="p">)</span>
+          <h1 id="_1">邮箱配置<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
+<h2 id="mailgun">注册Mailgun<a class="headerlink" href="#mailgun" title="Permanent link">#</a></h2>
+<p>如果你选择使用Mailgun作为邮件客户端，就需要注册一个Mailgun账号( http://www.mailgun.com/ ) 。否则请跳过这一节。</p>
+<p>注册Mailgun，并绑定自己的域名作为邮件发送方(或使用官方提供的一个域名邮箱)。在域名详情页面找到自己的API BASE URL和API KEY，后面会用到。</p>
+<p><img alt="" src="../media/14768944062294/14768953711152.jpg" /></p>
+<h2 id="dockerdaocloud">从Docker安装（包括daocloud）请阅读这一节<a class="headerlink" href="#dockerdaocloud" title="Permanent link">#</a></h2>
+<p>从Docker安装的Mooder，许多配置会动态更改，所以将其放在环境变量中，便于用户在docker容器外对配置进行修改。</p>
+<p>如果使用Mailgun，则需要填写以下环境变量：</p>
+<ul>
+<li><code>EMAIL_BACKEND</code> 值为 <code>django_mailgun.MailgunBackend</code>，说明使用了Mailgun</li>
+<li><code>MAILGUN_SERVER_NAME</code> 刚才在MAILGUN里找到的API Base URL，只用填写<code>https://api.mailgun.net/v3/</code>后面的部分，如<code>mail.leavesongs.com</code></li>
+<li><code>MAILGUN_ACCESS_KEY</code> 刚才在MAILGUN里找到的API Key</li>
+<li><code>EMAIL_HOST_USER</code> 发邮件时默认使用的邮箱，比如 <code>no-reply@mail.leavesongs.com</code> ，这个可以自己定义，但后缀一定是你绑定Mailgun的域名</li>
+<li><code>DEFAULT_FROM_EMAIL</code> 发送邮件的邮箱</li>
+</ul>
+<p>如果使用SMTP，则填写以下环境变量</p>
+<ul>
+<li><code>EMAIL_BACKEND</code> 值为 <code>django.core.mail.backends.smtp.EmailBackend</code>，说明使用SMTP做发信方式</li>
+<li><code>EMAIL_HOST</code> SMTP服务主机地址</li>
+<li><code>EMAIL_PORT</code> SMTP服务端口</li>
+<li><code>EMAIL_HOST_USER</code> SMTP登录用户名，也是后面邮件时发件人的邮箱</li>
+<li><code>EMAIL_HOST_PASSWORD</code> SMTP登录密码</li>
+<li><code>EMAIL_USE_SSL</code> SMTP发送是否使用SSL，设置为<code>False</code>或删除这个环境变量，则表示不使用SSL</li>
+<li><code>EMAIL_USE_TLS</code> SMTP发送是否使用TLS，同SSL</li>
+<li><code>DEFAULT_FROM_EMAIL</code> 发送邮件的邮箱</li>
+</ul>
+<h2 id="_2">从源码安装请阅读这一节<a class="headerlink" href="#_2" title="Permanent link">#</a></h2>
+<p>从源码安装需要更改配置文件，邮箱的相关设置也会在配置文件中进行修改。首先阅读<a href="../../setting/info/">这一章</a>，了解Mooder的配置文件如何工作。</p>
+<p>然后，配置文件settings_production.py中默认使用了如下选项：</p>
+<div class="code"><pre><span></span><span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;EMAIL_HOST_USER&#39;</span><span class="p">)</span>
 <span class="n">EMAIL_BACKEND</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;EMAIL_BACKEND&#39;</span><span class="p">,</span> <span class="s1">&#39;django_mailgun.MailgunBackend&#39;</span><span class="p">)</span>
+<span class="n">DEFAULT_FROM_EMAIL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DEFAULT_FROM_EMAIL&#39;</span><span class="p">,</span> <span class="n">EMAIL_HOST_USER</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">EMAIL_BACKEND</span><span class="o">==</span><span class="s1">&#39;django_mailgun.MailgunBackend&#39;</span><span class="p">:</span>
     <span class="n">MAILGUN_ACCESS_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;MAILGUN_ACCESS_KEY&#39;</span><span class="p">)</span>
     <span class="n">MAILGUN_SERVER_NAME</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;MAILGUN_SERVER_NAME&#39;</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">EMAIL_BACKEND</span> <span class="o">==</span> <span class="s1">&#39;django.core.mail.backends.smtp.EmailBackend&#39;</span><span class="p">:</span>
-    <span class="n">DEFAULT_FROM_EMAIL</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;DEFAULT_FROM_EMAIL&#39;</span><span class="p">)</span>
     <span class="n">EMAIL_HOST</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;EMAIL_HOST&#39;</span><span class="p">)</span>
     <span class="n">EMAIL_PORT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;EMAIL_PORT&#39;</span><span class="p">)</span>
     <span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;EMAIL_HOST_USER&#39;</span><span class="p">)</span>
@@ -411,116 +383,39 @@
     <span class="n">EMAIL_USE_TLS</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;EMAIL_USE_TLS&#39;</span><span class="p">,</span> <span class="bp">None</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">EMAIL_USE_TLS</span> <span class="ow">and</span> <span class="n">EMAIL_USE_TLS</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;false&#39;</span><span class="p">:</span>
         <span class="n">EMAIL_USE_TLS</span> <span class="o">=</span> <span class="bp">None</span>
-
-<span class="n">STATIC_URL</span> <span class="o">=</span> <span class="s1">&#39;/static/&#39;</span>
-<span class="n">STATIC_ROOT</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s1">&#39;mooder&#39;</span><span class="p">,</span> <span class="s1">&#39;static_cdn&#39;</span><span class="p">)</span>
-
-<span class="n">MEDIA_URL</span> <span class="o">=</span> <span class="s1">&#39;/media/&#39;</span>
-<span class="n">MEDIA_ROOT</span> <span class="o">=</span> <span class="s1">&#39;/data&#39;</span>
 </pre></div>
 
 
-<p>第一行说明了settings_production.py与settings.py的继承关系。后面开始是覆盖默认项的配置项。</p>
-<p>其中有几个选项必须配置：</p>
+<p>相关说明如下：</p>
 <ul>
-<li>DEBUG 调试模式，生产环境下务必关闭调试模式。</li>
-<li>ALLOWED_HOSTS 允许哪些Host访问，默认为*，不限制。</li>
-<li>DATABASES 数据库配置。</li>
-<li>MEDIA_ROOT 数据文件（附件、头像等）存放地址，一定要有写权限。</li>
+<li>EMAIL_BACKEND 使用哪种邮件客户端，可供选择的有SMTP方式<code>django.core.mail.backends.smtp.EmailBackend</code>、Mailgun方式<code>django_mailgun.MailgunBackend</code>。建议使用SMTP。</li>
+<li>DEFAULT_FROM_EMAIL 发送邮件的发件人，默认与SMTP登录的邮箱相同</li>
 </ul>
-<p>关于Email的相关配置，见<a href="../email/">邮箱配置</a>一节。</p>
-<p>其他未提到的选项，可以不用修改。</p>
-<h2 id="3">3. 数据库配置<a class="headerlink" href="#3" title="Permanent link">#</a></h2>
-<p>Mooder默认使用postgres数据库，但其也可以使用Django支持的任何数据库引擎，具体配置方法见 <a href="https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-DATABASES">Django文档</a></p>
-<p>example 1. postgres配置：</p>
-<div class="code"><pre><span></span>DATABASES = {
-    &#39;default&#39;: {
-        &#39;ENGINE&#39;: &#39;django.db.backends.postgresql&#39;,
-        &#39;NAME&#39;: &#39;mydatabase&#39;,
-        &#39;USER&#39;: &#39;mydatabaseuser&#39;,
-        &#39;PASSWORD&#39;: &#39;mypassword&#39;,
-        &#39;HOST&#39;: &#39;127.0.0.1&#39;,
-        &#39;PORT&#39;: &#39;5432&#39;,
-    }
-}
+<p>如果你使用SMTP方式，请配置如下一些选项：</p>
+<ul>
+<li>EMAIL_HOST SMTP服务地址</li>
+<li>EMAIL_PORT SMTP服务端口</li>
+<li>EMAIL_HOST_USER 登录SMTP服务的邮箱。</li>
+<li>EMAIL_HOST_PASSWORD 邮箱密码</li>
+<li>EMAIL_USE_SSL 是否使用SSL</li>
+<li>EMAIL_USE_TLS 是否使用TLS</li>
+</ul>
+<p>如果你使用Mailgun方式，配置如下选项：</p>
+<ul>
+<li>MAILGUN_ACCESS_KEY 刚才在MAILGUN里找到的API Key</li>
+<li>MAILGUN_SERVER_NAME 刚才在MAILGUN里找到的API Base URL，只用填写<code>https://api.mailgun.net/v3/</code>后面的部分，如<code>mail.leavesongs.com</code></li>
+<li>EMAIL_HOST_USER 登录SMTP服务的邮箱（也是后面发送邮件的邮箱）。</li>
+</ul>
+<p>修改完成后，你的配置类似这样：</p>
+<div class="code"><pre><span></span><span class="n">EMAIL_HOST_USER</span> <span class="o">=</span> <span class="s1">&#39;no-reply@example.com&#39;</span>
+<span class="n">EMAIL_BACKEND</span> <span class="o">=</span> <span class="s1">&#39;django.core.mail.backends.smtp.EmailBackend&#39;</span>
+<span class="n">DEFAULT_FROM_EMAIL</span> <span class="o">=</span> <span class="n">EMAIL_HOST_USER</span>
+<span class="n">EMAIL_HOST</span> <span class="o">=</span> <span class="s1">&#39;smtp.example.com&#39;</span>
+<span class="n">EMAIL_PORT</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">EMAIL_HOST_PASSWORD</span> <span class="o">=</span> <span class="s1">&#39;password&#39;</span>
+<span class="n">EMAIL_USE_SSL</span> <span class="o">=</span> <span class="bp">False</span>
+<span class="n">EMAIL_USE_TLS</span> <span class="o">=</span> <span class="bp">False</span>
 </pre></div>
-
-
-<p>example 2. mysql配置</p>
-<div class="code"><pre><span></span>DATABASES = {
-    &#39;default&#39;: {
-        &#39;ENGINE&#39;: &#39;django.db.backends.mysql&#39;,
-        &#39;NAME&#39;: &#39;test&#39;,
-        &#39;USER&#39;: &#39;root&#39;,
-        &#39;PASSWORD&#39;: &#39;root&#39;,
-        &#39;HOST&#39;: &#39;127.0.0.1&#39;,
-        &#39;PORT&#39;: &#39;3306&#39;,
-    }
-}
-</pre></div>
-
-
-<p>example 3. sqlite配置</p>
-<div class="code"><pre><span></span>DATABASES = {
-    &#39;default&#39;: {
-        &#39;ENGINE&#39;: &#39;django.db.backends.sqlite3&#39;,
-        &#39;NAME&#39;: os.path.join(BASE_DIR, &#39;db.sqlite3&#39;),
-    }
-}
-</pre></div>
-
-
-<p>注意，使用mysql或postgres前需要安装一些必要的库。例如，使用postgres需要安装如下库：</p>
-<div class="code"><pre><span></span>sudo apt-get install postgresql-client
-pip install psycopg2
-</pre></div>
-
-
-<p>Mysql需要安装如下库：</p>
-<div class="code"><pre><span></span>sudo apt-get install mysql-client
-pip install mysqlclient
-</pre></div>
-
-
-<p>更多支持与配置（如数据库字符）还是参考Django的文档。</p>
-<h2 id="4">4. 生成加密密钥<a class="headerlink" href="#4" title="Permanent link">#</a></h2>
-<p>在settings.py中有一个SECRET_KEY（加密密钥），你可以直接给其赋予一个随机值：</p>
-<div class="code"><pre><span></span>SECRET_KEY = &#39;any random string&#39;
-</pre></div>
-
-
-<p>默认情况下，Mooder会从项目根目录读取一个文件“.secretkey”，将其内容作为项目的密钥。所以，我们可以执行以下命令生成一个64位长度的密钥文件：</p>
-<div class="code"><pre><span></span>sudo apt-get install openssl
-openssl rand -out .secretkey 64
-</pre></div>
-
-
-<h2 id="5">5. 创建初始化管理员账号<a class="headerlink" href="#5" title="Permanent link">#</a></h2>
-<p>详细请阅读 <a href="../../advanced/manage/">管理员与审核员</a> 一章。</p>
-<p>简单来说，创建管理员只需执行如下命令：</p>
-<div class="code"><pre><span></span>python3 manage.py createsuperuser
-</pre></div>
-
-
-<p>然后根据提示，填写昵称、邮箱、密码即可。</p>
-<h2 id="6-mooder">6. 启动Mooder<a class="headerlink" href="#6-mooder" title="Permanent link">#</a></h2>
-<p>首先初始化数据库：</p>
-<div class="code"><pre><span></span>python3 ./manage.py migrate
-</pre></div>
-
-
-<p>生成静态文件：</p>
-<div class="code"><pre><span></span>python3 ./manage.py collectstatic
-</pre></div>
-
-
-<p>运行：</p>
-<div class="code"><pre><span></span>python3 ./manage.py runserver
-</pre></div>
-
-
-<p>以上命令会将mooder运行在默认端口（8000）。</p>
-<p>生产环境下不建议直接使用Django自带的Webserver，请使用nginx + gunicorn或Apache mod-uwsgi部署。具体部署方法参考 <a href="https://docs.djangoproject.com/en/dev/howto/deployment/">Django文档</a>。</p>
           <aside class="copyright" role="note">
             
               Mooder团队贡献系统 &ndash;
@@ -539,7 +434,7 @@ openssl rand -out .secretkey 64
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href="../install-from-docker/" title="从Docker一键安装">
+        <a href="../install-from-daocloud/" title="从Daocloud一键安装">
           <span class="direction">
             Previous
           </span>
@@ -549,7 +444,7 @@ openssl rand -out .secretkey 64
             </div>
             <div class="stretch">
               <div class="title">
-                从Docker一键安装
+                从Daocloud一键安装
               </div>
             </div>
           </div>
@@ -558,14 +453,14 @@ openssl rand -out .secretkey 64
     </div>
     <div class="next">
       
-        <a href="../install-from-daocloud/" title="从Daocloud一键安装">
+        <a href="../category/" title="初始化分类">
           <span class="direction">
             Next
           </span>
           <div class="page">
             <div class="stretch">
               <div class="title">
-                从Daocloud一键安装
+                初始化分类
               </div>
             </div>
             <div class="button button-next" role="button" aria-label="Next">
