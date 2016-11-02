@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-11-01</lastmod>
+     <lastmod>2016-11-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,31 +13,31 @@
         
     <url>
      <loc>None/install/install-from-docker/</loc>
-     <lastmod>2016-11-01</lastmod>
+     <lastmod>2016-11-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/install/install-from-source/</loc>
-     <lastmod>2016-11-01</lastmod>
+     <lastmod>2016-11-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/install/install-from-daocloud/</loc>
-     <lastmod>2016-11-01</lastmod>
+     <lastmod>2016-11-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/install/email/</loc>
-     <lastmod>2016-11-01</lastmod>
+     <lastmod>2016-11-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/install/category/</loc>
-     <lastmod>2016-11-01</lastmod>
+     <lastmod>2016-11-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -47,7 +47,7 @@
         
     <url>
      <loc>None/setting/info/</loc>
-     <lastmod>2016-11-01</lastmod>
+     <lastmod>2016-11-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -57,25 +57,25 @@
         
     <url>
      <loc>None/advanced/manage/</loc>
-     <lastmod>2016-11-01</lastmod>
+     <lastmod>2016-11-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/advanced/edit-port/</loc>
-     <lastmod>2016-11-01</lastmod>
+     <lastmod>2016-11-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/advanced/edit-admin-url/</loc>
-     <lastmod>2016-11-01</lastmod>
+     <lastmod>2016-11-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>None/advanced/upgrade/</loc>
-     <lastmod>2016-11-01</lastmod>
+     <lastmod>2016-11-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -84,7 +84,7 @@
     
     <url>
      <loc>None/about/</loc>
-     <lastmod>2016-11-01</lastmod>
+     <lastmod>2016-11-02</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

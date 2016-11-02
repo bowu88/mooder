@@ -200,8 +200,8 @@
         <ul>
           
             <li class="anchor">
-              <a title="1. 修改环境变量" href="#1">
-                1. 修改环境变量
+              <a title="1. 安装必要依赖" href="#1">
+                1. 安装必要依赖
               </a>
             </li>
           
@@ -224,14 +224,20 @@
             </li>
           
             <li class="anchor">
-              <a title="5. 创建初始化管理员账号" href="#5">
-                5. 创建初始化管理员账号
+              <a title="5. 指定配置文件" href="#5">
+                5. 指定配置文件
               </a>
             </li>
           
             <li class="anchor">
-              <a title="6. 启动Mooder" href="#6-mooder">
-                6. 启动Mooder
+              <a title="6. 创建初始化管理员账号" href="#6">
+                6. 创建初始化管理员账号
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="7. 启动Mooder" href="#7-mooder">
+                7. 启动Mooder
               </a>
             </li>
           
@@ -357,7 +363,7 @@
           <h1 id="_1">从源码安装<a class="headerlink" href="#_1" title="Permanent link">#</a></h1>
 <p>除了使用docker一键安装以外，Mooder还支持从源码安装。这一章我介绍一下如何从源码安装Mooder，并配置数据库。</p>
 <p>首先，Mooder是基于Python3的（不兼容Python2.7），请先安装Python 3。</p>
-<h2 id="1">1. 修改环境变量<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
+<h2 id="1">1. 安装必要依赖<a class="headerlink" href="#1" title="Permanent link">#</a></h2>
 <p>安装必要依赖：</p>
 <div class="code"><pre><span></span>apt-get update &amp;&amp; apt-get install libpq-dev libjpeg-dev zlib1g-dev libfreetype6-dev
 </pre></div>
@@ -495,7 +501,26 @@ openssl rand -out .secretkey 64
 </pre></div>
 
 
-<h2 id="5">5. 创建初始化管理员账号<a class="headerlink" href="#5" title="Permanent link">#</a></h2>
+<h2 id="5">5. 指定配置文件<a class="headerlink" href="#5" title="Permanent link">#</a></h2>
+<p>Mooder启动的时候，会默认加载mooder/settings.py作为配置文件。为了使用自定义配置文件，我们需要设置一个环境变量，指定自定义配置文件的位置：</p>
+<div class="code"><pre><span></span><span class="c1"># DJANGO_SETTINGS_MODULE 环境变量的值是Python包格式</span>
+<span class="nb">export</span> <span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span>mooder.settings_custom
+
+<span class="c1"># 运行Mooder</span>
+python3 manage.py runserver
+</pre></div>
+
+
+<p>Windows下使用<code>set</code>来指定环境变量：</p>
+<div class="code"><pre><span></span><span class="nb">set</span> <span class="nv">DJANGO_SETTINGS_MODULE</span><span class="o">=</span>mooder.settings_custom
+py -3 manage.py runserver
+</pre></div>
+
+
+<p>如果你使用系统自带的生产环境配置文件（mooder/settings_production.py），也需要定义该环境变量。</p>
+<p>在指定了环境变量DJANGO_SETTINGS_MODULE后，Mooder就会使用DJANGO_SETTINGS_MODULE指向的配置文件。</p>
+<p>一定要先指定这个环境变量，在进行后面的6、7等操作，否则你定义的配置文件就不会生效。</p>
+<h2 id="6">6. 创建初始化管理员账号<a class="headerlink" href="#6" title="Permanent link">#</a></h2>
 <p>详细请阅读 <a href="../../advanced/manage/">管理员与审核员</a> 一章。</p>
 <p>简单来说，创建管理员只需执行如下命令：</p>
 <div class="code"><pre><span></span>python3 manage.py createsuperuser
@@ -503,7 +528,7 @@ openssl rand -out .secretkey 64
 
 
 <p>然后根据提示，填写昵称、邮箱、密码即可。</p>
-<h2 id="6-mooder">6. 启动Mooder<a class="headerlink" href="#6-mooder" title="Permanent link">#</a></h2>
+<h2 id="7-mooder">7. 启动Mooder<a class="headerlink" href="#7-mooder" title="Permanent link">#</a></h2>
 <p>首先初始化数据库：</p>
 <div class="code"><pre><span></span>python3 ./manage.py migrate
 </pre></div>
