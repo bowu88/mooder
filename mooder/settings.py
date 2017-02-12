@@ -182,9 +182,9 @@ USER_LEVEL_RANGE = (
 )
 
 SITE = {
-    'title': '安全团队贡献平台',
-    'description': '一个团队使用的贡献平台',
-    'keyword': '安全,团队,贡献'
+    'title': 'BlueCat 团队漏洞交流平台（内部使用）',
+    'description': '内部使用的漏洞交流平台',
+    'keyword': 'bluecat,安全,团队,贡献,SRC,XSS,CTF'
 }
 
 ACCOUNT_ACTIVATION_DAYS = 3
